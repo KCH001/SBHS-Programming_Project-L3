@@ -30,14 +30,37 @@
             setInterval(mainloop, 1000 / 50);
         }
 
-        const LEFT_KEY = 37;
-        const UP_KEY = 38;
-        const RIGHT_KEY = 39;
-        const DOWN_KEY = 40;
-        var leftKeyPressed = false;
-        var upKeyPressed = false;
-        var rightKeyPressed = false;
-        var downKeyPressed = false;
+        var carXpos = 0;
+        var carYpos = 330;
+        var carXspeed = 3.3;
+        var carYspeed = 5;
+        const CAR_WIDTH = 55;
+        const CAR_HEIGHT = 120;
+
+        //Key Pressed / Key Released//
+        //Arrow Keys//
+        const LEFT_ARROW = 37;
+        const UP_ARROW = 38;
+        const RIGHT_ARROW = 39;
+        const DOWN_ARROW = 40;
+        var leftPressed = false;
+        var upPressed = false;
+        var rightPressed = false;
+        var downPressed = false;
+        //WASD Keys//
+        const A_KEY = 65;
+        const W_KEY = 87;
+        const D_KEY = 68;
+        const S_KEY = 83;
+        const REFRESH = 82;
+        var rKeyPressed = false;
+        var aKeyPressed = false;
+        var wKeyPressed = false;
+        var dKeyPressed = false;
+        var sKeyPressed = false;
+
+
+
 
 
         function mainloop() {
