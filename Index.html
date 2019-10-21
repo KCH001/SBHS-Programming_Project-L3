@@ -1,0 +1,51 @@
+<!doctype html>
+
+<head>
+    <title> Highway Rush | Route 2</title>
+
+    <link rel="icon" href="3._Images/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="description" content="Highway Rush | Route 2">
+    <meta name="keywords" content="Sbhs, KeanuCHodges, Highway Rush | Route 2">
+    <meta name="author" content="Keanu C Hodges">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!--    classes js files go here-->
+</head>
+
+<body>
+
+    <canvas width="500" height="800" id="gameCanvas"></canvas>
+
+    <script>
+        var canvas, canvasContext;
+
+        window.onload = function() {
+            canvas = document.getElementById('gameCanvas');
+            canvasContext = canvas.getContext('2d');
+
+            //           
+
+            setInterval(mainloop, 1000 / 50);
+        }
+
+        //
+
+
+
+        function mainloop() {
+            colorRect(0, 0, canvas.width, canvas.height, 'black');
+        }
+
+
+        function colorRect(x, y, w, h, c) {
+            canvasContext.fillStyle = c;
+            canvasContext.fillRect(x, y, w, h);
+        }
+
+
+        //
+
+    </script>
+
+</body>
