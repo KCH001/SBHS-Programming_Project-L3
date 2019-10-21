@@ -3,14 +3,15 @@
 <head>
     <title> Highway Rush | Route 2</title>
 
-    <link rel="icon" href="3._Images/favicon.ico" type="image/x-icon">
+    <!--    <link rel="icon" href="3._Images/favicon.ico" type="image/x-icon">-->
     <meta charset="UTF-8">
     <meta name="description" content="Highway Rush | Route 2">
     <meta name="keywords" content="Sbhs, KeanuCHodges, Highway Rush | Route 2">
     <meta name="author" content="Keanu C Hodges">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <!--    <link rel="stylesheet" href="styles.css">-->
     <!--    classes js files go here-->
+    <script src="Player.js"></script>
 </head>
 
 <body>
@@ -36,6 +37,12 @@
         var carYspeed = 5;
         const CAR_WIDTH = 55;
         const CAR_HEIGHT = 120;
+
+
+        var playerImg = new Image();
+        playerImg.src = 'Images/Car/Car.png';
+
+        var player = new Player(playerImg, carXpos, carYpos, CAR_WIDTH, CAR_HEIGHT, carXspeed, carYspeed);
 
         //Key Pressed / Key Released//
         //Arrow Keys//
@@ -65,43 +72,102 @@
 
         function mainloop() {
             colorRect(0, 0, canvas.width, canvas.height, 'black');
+
+            player.draw();
+            player.move();
+            //            if (startingPos) {
+            // player.startPos();
+            // }
+
         }
 
 
         function colorRect(x, y, w, h, c) {
             canvasContext.fillStyle = c;
             canvasContext.fillRect(x, y, w, h);
+
+
         }
 
 
+        //Key code pressed Functions
         function keyPressed(evt) {
-            // console.log(evt.keyCode);
-            if (evt.keyCode == LEFT_KEY) {
-                leftKeyPressed = true;
+            //            console.log(evt.keyCode)
+
+            if (evt.keyCode == REFRESH) {
+                window.location.reload();
             }
-            if (evt.keyCode == RIGHT_KEY) {
-                rightKeyPressed = true;
+            //Key Press With Arrow Keys
+            //Left Arrow
+            if (evt.keyCode == LEFT_ARROW) {
+                leftPressed = true;
             }
-            if (evt.keyCode == UP_KEY) {
-                upKeyPressed = true;
+            //Up Arrow
+            if (evt.keyCode == UP_ARROW) {
+                upPressed = true;
             }
-            if (evt.keyCode == DOWN_KEY) {
-                downKeyPressed = true;
+            //Right Arrow
+            if (evt.keyCode == RIGHT_ARROW) {
+                rightPressed = true;
+            }
+            //Down Arrow
+            if (evt.keyCode == DOWN_ARROW) {
+                downPressed = true;
+            }
+            //Key Press With WASD
+            //A_KEY
+            if (evt.keyCode == A_KEY) {
+                aKeyPressed = true;
+            }
+            //W_KEY
+            if (evt.keyCode == W_KEY) {
+                wKeyPressed = true;
+            }
+            //D_KEY
+            if (evt.keyCode == D_KEY) {
+                dKeyPressed = true;
+            }
+            //S_KEY
+            if (evt.keyCode == S_KEY) {
+                sKeyPressed = true;
             }
         }
 
+        //Key code Released funtions
         function keyReleased(evt) {
-            if (evt.keyCode == LEFT_KEY) {
-                leftKeyPressed = false;
+            //Key Press With Arrow Keys
+            //Left Arrow
+            if (evt.keyCode == LEFT_ARROW) {
+                leftPressed = false;
             }
-            if (evt.keyCode == RIGHT_KEY) {
-                rightKeyPressed = false;
+            //Up Arrow
+            if (evt.keyCode == UP_ARROW) {
+                upPressed = false;
             }
-            if (evt.keyCode == UP_KEY) {
-                upKeyPressed = false;
+            //Right Arrow
+            if (evt.keyCode == RIGHT_ARROW) {
+                rightPressed = false;
             }
-            if (evt.keyCode == DOWN_KEY) {
-                downKeyPressed = false;
+            //Down Arrow
+            if (evt.keyCode == DOWN_ARROW) {
+                downPressed = false;
+            }
+            //Key Press With WASD
+            //A_KEY
+            if (evt.keyCode == A_KEY) {
+                aKeyPressed = false;
+            }
+            //W_KEY
+            if (evt.keyCode == W_KEY) {
+                wKeyPressed = false;
+            }
+            //D_KEY
+            if (evt.keyCode == D_KEY) {
+                dKeyPressed = false;
+            }
+            //S_KEY
+            if (evt.keyCode == S_KEY) {
+                sKeyPressed = false;
             }
         }
 
